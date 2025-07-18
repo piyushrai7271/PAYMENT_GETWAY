@@ -1,0 +1,51 @@
+# --- General ---
+node_modules/
+.env
+.env.*        # .env.development, .env.production, etc.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+tmp/
+temp/
+
+# --- Logs ---
+logs/
+*.log
+debug.log
+error.log
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- React Client ---
+client/node_modules/
+client/build/
+client/.env
+client/.env.* 
+client/.DS_Store
+
+# --- Server (Express / Node.js) ---
+server/node_modules/
+server/dist/
+server/.env
+server/.env.*
+
+# --- Optional: MongoDB ---
+dump/
+*.local
+
+# --- Others (if using Docker, testing, etc.) ---
+docker-compose.override.yml
+coverage/
+jest-html-reporters-*.html
+*.tgz
