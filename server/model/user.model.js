@@ -34,12 +34,12 @@ userSchema.pre("save", async function (next) {
     next();
 } )
 
-userSchema.methods.isPasswordCorrect = function (incomPassword) {
+userSchema.methods.isPasswordCorrect = async function (incomPassword) {
     if(!incomPassword){
         throw new Error("Comming password is missing")
     }
 
-    return bcrypt.compare(this.password,incomPassword);
+    return await bcrypt.compare(incomPassword.toString(),this.password);
 }
 
 userSchema.methods.generateAccessToken = function () {

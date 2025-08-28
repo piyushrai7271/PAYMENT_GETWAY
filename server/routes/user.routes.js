@@ -1,4 +1,5 @@
 import express from "express";
+import {userAuth} from "../middlewares/userAuth.middleware.js";
 import {
     registerUser,
     loginUser,
@@ -9,6 +10,6 @@ const router = express.Router()
 
 router.post("/register",registerUser);
 router.post("/login",loginUser);
-router.post("/logout",logOut);
-router.post("/change-password",changePassword);
+router.post("/logout",userAuth,logOut);
+router.post("/change-password",userAuth,changePassword);
 export default router;
